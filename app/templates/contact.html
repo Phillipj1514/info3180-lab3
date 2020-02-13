@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+<form method="post" action="{{ url_for('contact') }}">
+    {{ form.csrf_token }}
+    {{ form.name.label }}<br/>
+    {{ form.name(size=40) }}<br/>
+    {{ form.email.label }}<br/>
+    {{ form.email(size=40) }}<br/>
+    {{ form.subject.label }}<br/>
+    {{ form.subject(size=40) }}<br/>
+    {{ form.message.label }}<br/>
+    {{ form.message(size=40) }}<br/>
+    <span></span><br/>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
